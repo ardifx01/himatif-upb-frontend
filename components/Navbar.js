@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav
       data-aos="slide-down"
-      className="font-krona flex justify-between px-10 items-center sticky top-0 backdrop-blur-lg py-3 transition-all duration-300"
+      className=" font-manguiera flex justify-between px-10 items-center sticky top-0 backdrop-blur-lg py-3 transition-all duration-300"
     >
       <ul className="flex gap-5 list-none">
         {[
@@ -27,7 +27,7 @@ const Navbar = () => {
         ].map((item) => (
           <li key={item.href}>
             <Link href={item.href} legacyBehavior>
-              <a className="no-underline transition-colors duration-500 ease-in-out hover:text-1">
+              <a className="no-underline transition-colors text-0 duration-500 ease-in-out hover:text-1">
                 {item.label}
               </a>
             </Link>

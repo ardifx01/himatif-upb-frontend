@@ -31,3 +31,10 @@ body {
     text-wrap: balance;
   }
 }
+
+@font-face {
+  font-family: "manguiera";
+  src: url("/fonts/Fontspring-DEMO-mangueira-semibold.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
