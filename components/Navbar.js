@@ -5,6 +5,7 @@ import "aos/dist/aos.css"; // Import AOS styles
 import { useEffect } from "react";
 import AOS from "aos";
 import { useRouter } from "next/router";
+import SparklesText from "@/components/magicui/sparkles-text";
 
 const Navbar = () => {
   useEffect(() => {
@@ -42,7 +43,10 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <div className="logo ">
+      <div className="flex items-center justify-center gap-10">
+        <div>
+          <SparklesText className={" text-3xl"} text={"HIMATIF UPB"} />
+        </div>
         <Image
           src="/image/logo.jpeg"
           width={50}
