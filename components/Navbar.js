@@ -4,6 +4,7 @@ import Image from "next/image";
 import "aos/dist/aos.css"; // Import AOS styles
 import { useEffect } from "react";
 import AOS from "aos";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   useEffect(() => {
@@ -11,12 +12,13 @@ const Navbar = () => {
       duration: 1000,
     });
   }, []);
+  const router = useRouter();
   return (
     <nav
       data-aos="slide-down"
-      className=" font-manguiera flex justify-between px-10 items-center sticky top-0 backdrop-blur-lg py-3 transition-all duration-300"
+      className="font-manguiera flex justify-between max-md:hidden px-10 items-center bg-gray-200 bg-opacity-70 border-white border-2 max-md:flex-col py-1 transition-all duration-300 rounded-full "
     >
-      <ul className="flex gap-5 list-none">
+      <ul className="flex gap-3 list-none">
         {[
           { href: "/", label: "Home" },
           { href: "/profil", label: "Profil" },
@@ -27,14 +29,20 @@ const Navbar = () => {
         ].map((item) => (
           <li key={item.href}>
             <Link href={item.href} legacyBehavior>
-              <a className="no-underline transition-colors text-0 duration-500 ease-in-out hover:text-1">
+              <a
+                className={`no-underline transition-colors text-0 duration-500 ease-in-out py-2 px-5 rounded-full ${
+                  item.href === router.asPath
+                    ? "bg-white text-3"
+                    : "hover:bg-white hover:text-3"
+                }`}
+              >
                 {item.label}
               </a>
             </Link>
           </li>
         ))}
       </ul>
-      <div className="logo">
+      <div className="logo ">
         <Image
           src="/image/logo.jpeg"
           width={50}
