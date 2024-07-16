@@ -35,14 +35,14 @@ const Navbar = () => {
     <nav
       className={`font-manguiera flex flex-col md:flex-row-reverse gap-10 ${
         menuOpen ? "max-md:rounded-[25px]" : "max-md:rounded-[90px] "
-      } justify-between items-center max-md:p-0 px-10 py-1 bg-gray-200 bg-opacity-70 border-white border-2 transition-all ease-in-out rounded-full `}
+      } justify-between items-center max-md:p-0 px-10 py-3 bg-gray-200 bg-opacity-70 border-white border-2 transition-all ease-in-out rounded-full `}
     >
       <div className="flex justify-between w-full md:w-auto items-center">
         <div data-aos="fade-right" className="flex mx-auto items-center gap-3">
           <SparklesText
             sparklesCount={10}
-            className="text-2xl max-md:text-xl"
-            text="ToyoInk"
+            className="text-2xl mt-2 max-md:text-xl"
+            text="Himatif UPB"
           />
           <Image
             src="/image/logo.png"
@@ -80,7 +80,7 @@ const Navbar = () => {
           <li key={item.href}>
             <Link href={item.href} legacyBehavior>
               <a
-                className={`no-underline transition-colors text-0 text-sm justify-center items-center flex duration-500 ease-in-out py-1 px-5 rounded-full ${
+                className={`no-underline transition-colors text-0 text-sm justify-center items-center flex duration-500 ease-in-out py-3 px-5 rounded-full ${
                   item.href === router.asPath
                     ? "bg-white text-3"
                     : "hover:bg-white hover:text-5"
