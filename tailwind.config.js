@@ -15,6 +15,25 @@ module.exports = {
       screens: {
         "2xl": "1400px",
       },
+      screens: {
+        sm: "640px",
+        // => @media (min-width: 640px) { ... }
+
+        md: "768px",
+        // => @media (min-width: 768px) { ... }
+
+        lg: "1024px",
+        // => @media (min-width: 1024px) { ... }
+
+        xl: "1280px",
+        // => @media (min-width: 1280px) { ... }
+
+        "2xl": "1536px",
+        // => @media (min-width: 1536px) { ... }
+      },
+      borderRadius: {
+        setup: "900px",
+      },
     },
     extend: {
       colors: {
@@ -28,6 +47,8 @@ module.exports = {
         2: "#C9941E",
         3: "#80600F",
         4: "#C09439",
+        5: "#A07CFE",
+        6: "#FE8FB5",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

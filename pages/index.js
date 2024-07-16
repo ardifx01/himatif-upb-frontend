@@ -14,7 +14,7 @@ const Home = () => {
     <main className="">
       <header className="items-center justify-around">
         <div className="p-50 flex "></div>
-        <div>
+        <div data-aos="fade-out">
           <Carousel />
         </div>
       </header>

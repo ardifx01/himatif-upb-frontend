@@ -21,23 +21,24 @@ export default function App() {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 5000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        // navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper h-10 bg-0"
-        style={{ height: "600px" }}
       >
         <SwiperSlide>
           <Image src={Banner} alt="Banner" />
         </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>
+          <Image src={Banner} alt="Banner" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image src={Banner} alt="Banner" />
+        </SwiperSlide>
       </Swiper>
     </>
   );

@@ -1,25 +1,74 @@
-// components/Navbar.js
 import Link from "next/link";
 import Image from "next/image";
 import "aos/dist/aos.css"; // Import AOS styles
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import AOS from "aos";
 import { useRouter } from "next/router";
 import SparklesText from "@/components/magicui/sparkles-text";
+import { CoolMode } from "@/components/magicui/cool-mode";
+import { RiMenu5Fill } from "react-icons/ri";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
     });
+
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
+
   const router = useRouter();
+
   return (
     <nav
-      data-aos="slide-down"
-      className="font-manguiera flex justify-between max-md:hidden px-10 items-center bg-gray-200 bg-opacity-70 border-white border-2 max-md:flex-col py-1 transition-all duration-300 rounded-full "
+      className={`font-manguiera flex flex-col md:flex-row-reverse gap-10 ${
+        menuOpen ? "max-md:rounded-[25px]" : "max-md:rounded-[90px] "
+      } justify-between items-center max-md:p-0 px-10 py-1 bg-gray-200 bg-opacity-70 border-white border-2 transition-all ease-in-out rounded-full `}
     >
-      <ul className="flex gap-3 list-none">
+      <div className="flex justify-between w-full md:w-auto items-center">
+        <div data-aos="fade-right" className="flex mx-auto items-center gap-3">
+          <SparklesText
+            sparklesCount={10}
+            className="text-2xl max-md:text-xl"
+            text="ToyoInk"
+          />
+          <Image
+            src="/image/logo.png"
+            width={30}
+            height={30}
+            alt="Logo"
+            priority
+          />
+        </div>
+        <CoolMode>
+          <button
+            data-aos="fade-left"
+            className="rounded-full flex text-sm md:hidden p-2 m-2 active:bg-6 bg-white"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <RiMenu5Fill />
+          </button>
+        </CoolMode>
+      </div>
+
+      <ul
+        ref={menuRef}
+        className={`flex-col md:flex-row gap-1 w-full md:w-auto justify-start items-center list-none md:flex ${
+          menuOpen ? "flex" : "hidden"
+        } md:flex`}
+      >
         {[
           { href: "/", label: "Home" },
           { href: "/profil", label: "Profil" },
@@ -31,11 +80,12 @@ const Navbar = () => {
           <li key={item.href}>
             <Link href={item.href} legacyBehavior>
               <a
-                className={`no-underline transition-colors text-0 duration-500 ease-in-out py-2 px-5 rounded-full ${
+                className={`no-underline transition-colors text-0 text-sm justify-center items-center flex duration-500 ease-in-out py-1 px-5 rounded-full ${
                   item.href === router.asPath
                     ? "bg-white text-3"
-                    : "hover:bg-white hover:text-3"
+                    : "hover:bg-white hover:text-5"
                 }`}
+                onClick={() => setMenuOpen(false)}
               >
                 {item.label}
               </a>
@@ -43,18 +93,6 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <div className="flex items-center justify-center gap-10">
-        <div>
-          <SparklesText className={" text-3xl"} text={"HIMATIF UPB"} />
-        </div>
-        <Image
-          src="/image/logo.jpeg"
-          width={50}
-          height={50}
-          alt="Logo"
-          priority
-        />
-      </div>
     </nav>
   );
 };
