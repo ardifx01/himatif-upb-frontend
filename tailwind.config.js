@@ -1,3 +1,5 @@
+const { Poppins } = require("next/font/google");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -42,7 +44,7 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        0: "#0208817",
+        0: "#0c2b4b",
         1: "#F40307",
         2: "#C9941E",
         3: "#80600F",
@@ -78,9 +80,11 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+
       fontFamily: {
         krona: ["Krona One", "sans-serif"],
         manguiera: ["manguiera", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -96,8 +100,13 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        grid: {
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0)" },
+        },
       },
       animation: {
+        grid: "grid 15s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },

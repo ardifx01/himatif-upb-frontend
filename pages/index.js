@@ -1,8 +1,9 @@
-import Link from "next/link";
 import "aos/dist/aos.css"; // Import AOS styles
 import { useEffect } from "react";
 import AOS from "aos";
 import Carousel from "@/components/carousel";
+import Header from "@/components/header";
+
 
 const Home = () => {
   useEffect(() => {
@@ -12,10 +13,12 @@ const Home = () => {
   }, []);
   return (
     <main className="">
-      <header className="items-center justify-around">
-        <div className="p-50 flex "></div>
-        <div data-aos="fade-out">
+      <header>
+        <div className="max-md:mb-5" data-aos="fade-out">
           <Carousel />
+        </div>
+        <div>
+          <Header />
         </div>
       </header>
     </main>

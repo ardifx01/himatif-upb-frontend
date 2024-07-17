@@ -35,7 +35,7 @@ const Navbar = () => {
     <nav
       className={`font-manguiera flex flex-col md:flex-row-reverse gap-10 ${
         menuOpen ? "max-md:rounded-[25px]" : "max-md:rounded-[90px] "
-      } justify-between items-center max-md:p-0 px-10 py-3 bg-gray-200 bg-opacity-70 border-white border-2 transition-all ease-in-out rounded-full `}
+      } justify-between items-center max-md:p-0 px-10 py-2 backdrop-blur-2xl border-white border-2 transition-all ease-in-out rounded-full `}
     >
       <div className="flex justify-between w-full md:w-auto items-center">
         <div data-aos="fade-right" className="flex mx-auto items-center gap-3">
@@ -54,7 +54,6 @@ const Navbar = () => {
         </div>
         <CoolMode>
           <button
-            data-aos="fade-left"
             className="rounded-full flex text-sm md:hidden p-2 m-2 active:bg-6 bg-white"
             onClick={() => setMenuOpen(!menuOpen)}
           >
@@ -80,7 +79,7 @@ const Navbar = () => {
           <li key={item.href}>
             <Link href={item.href} legacyBehavior>
               <a
-                className={`no-underline transition-colors text-0 text-sm justify-center items-center flex duration-500 ease-in-out py-3 px-5 rounded-full ${
+                className={`no-underline transition-colors text-0 text-sm justify-center items-center flex duration-500 ease-in-out pt-3 pb-2 px-5 rounded-full ${
                   item.href === router.asPath
                     ? "bg-white text-3"
                     : "hover:bg-white hover:text-5"
