@@ -60,7 +60,7 @@ export default function Footer() {
   return (
     <footer className="flex flex-col mt-10 flex-wrap">
       <div className="flex justify-around font-poppins max-md:flex-col max-md:gap-5 border-t-2 p-10">
-        <div className="basis-2/4 flex flex-col justify-start items-center px-10 gap-3">
+        <div className="basis-2/4 flex  flex-col justify-start items-center px-10 gap-3">
           <div className="text-0">
             <h1 className="text-xl font-medium">HIMATIF</h1>
           </div>
@@ -76,7 +76,7 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        <div className="basis-2/4 flex flex-col justify-start items-center px-10 gap-3">
+        <div className="basis-2/4 flex  flex-col justify-start items-center px-10 gap-3">
           <div className="text-0">
             <h1 className="text-xl font-medium">QUICK LINK</h1>
           </div>
@@ -115,7 +115,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center text-white text-sm py-2 px-10 text-center rounded-t-full flex-wrap text-wrap w-screen bg-0">
+      <div className="flex justify-center items-center text-white text-sm py-2 px-10 text-center rounded-t-full flex-wrap text-wrap bg-0">
         <p>Copyright © 2024 HIMATIF, Universtas Pelita Bangsa</p>
       </div>
     </footer>
