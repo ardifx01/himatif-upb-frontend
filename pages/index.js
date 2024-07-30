@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import Carousel from "@/components/carousel";
 import Header from "@/components/header";
-
+import Department from "@/components/homeDepartment";
 
 const Home = () => {
   useEffect(() => {
@@ -20,6 +20,7 @@ const Home = () => {
         <div>
           <Header />
         </div>
+        <Department />
       </header>
     </main>
   );

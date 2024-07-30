@@ -33,9 +33,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`font-manguiera flex flex-col hover:shadow-xl md:flex-row-reverse gap-10 ${
+      className={`font-manguiera flex flex-col  shadow-xl md:flex-row-reverse gap-10 ${
         menuOpen ? "max-md:rounded-[25px]" : "max-md:rounded-[90px] "
-      } justify-between items-center max-md:p-0 px-10 py-2 backdrop-blur-2xl  border-white border-2 transition-all ease-in-out rounded-full `}
+      } justify-between items-center max-md:p-0 px-10 py-2 backdrop-blur-2xl border-white border-2 transition-all ease-in-out rounded-full `}
     >
       <div className="flex justify-between w-full md:w-auto items-center">
         <div data-aos="fade-right" className="flex mx-auto items-center gap-3">
