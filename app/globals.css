@@ -58,6 +58,13 @@
     --chart-5: 340 75% 55%;
   }
 }
+@font-face {
+  font-family: "manguiera";
+  src: url("../public//fonts/Fontspring-DEMO-mangueira-semibold.otf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 @layer base {
   * {
