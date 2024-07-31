@@ -6,28 +6,28 @@ import AOS from "aos";
 
 const departments = [
   {
-    name: "Departemen Pengembangan Organisasi (PO)",
+    name: "Pengembangan Organisasi (PO)",
     description:
       "Departemen yang berfokus pada pengembangan dan peningkatan kualitas organisasi",
   },
   {
-    name: "Departemen Komunikasi dan Informasi (MEDKOMINFO)",
+    name: "Komunikasi dan Informasi (MEDKOMINFO)",
     description:
       "Departemen yang mengurus dan mengelola informasi serta komunikasi internal dan eksternal",
   },
   {
-    name: "Departemen Minat dan Bakat (MIBA)",
+    name: "Minat dan Bakat (MIBA)",
     description:
       "Departemen yang menyalurkan dan mengembangkan minat serta bakat para mahasiswa",
   },
   {
-    name: "Departemen Penelitian dan Pengembangan (LITBANG)",
+    name: "Penelitian dan Pengembangan (LITBANG)",
     description:
       "Departemen yang menangani dan mengkoordinasikan kegiatan penelitian dan pengembangan",
     link: "https://google.com",
   },
   {
-    name: "Departemen Hubungan Eksternal dan Internal (HUBEKS & HUBIN)",
+    name: "Hubungan Eksternal dan Internal (HUBEKS & HUBIN)",
     description:
       "Departemen yang menjalin dan mengembangkan hubungan baik dengan pihak internal maupun eksternal",
   },
