@@ -6,7 +6,7 @@ import Visimisi from "../visimisi";
 
 export default function Header() {
   return (
-    <div className="flex justify-center items-center flex-col text-center font-manguiera">
+    <div className="flex justify-center items-center flex-col md:mx-20 text-center font-manguiera">
       <div>
         <BoxReveal>
           <SparklesText

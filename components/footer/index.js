@@ -11,15 +11,15 @@ export default function Footer() {
 
   const contactInfo = [
     {
-      icon: <MdLocationPin fill="navy" size={29} />,
+      icon: <MdLocationPin fill="white" size={29} />,
       text: "Jl. Inspeksi Kalimalang No.9, Cibatu, Cikarang Sel., Kabupaten Bekasi, Jawa Barat 17530",
     },
     {
-      icon: <BsFillTelephoneFill fill="navy" size={15} />,
+      icon: <BsFillTelephoneFill fill="white" size={20} />,
       text: "089631149187",
     },
     {
-      icon: <MdEmail fill="navy" size={15} />,
+      icon: <MdEmail fill="white" size={20} />,
       text: "himatif@pelitabangsa.ac.id",
       link: "mailto:himatif@pelitabangsa.ac.id",
     },
@@ -58,17 +58,17 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="flex flex-col mt-10 flex-wrap">
+    <footer className="flex flex-col bg-0 mt-10 flex-wrap">
       <div className="flex justify-around font-poppins max-md:flex-col max-md:gap-5 border-t-2 p-10">
         <div className="basis-2/4 flex  flex-col justify-start items-center px-10 gap-3">
-          <div className="text-0">
+          <div className="text-white">
             <h1 className="text-xl font-medium">HIMATIF</h1>
           </div>
           <div className="text-sm flex flex-col gap-5">
             {contactInfo.map((info, index) => (
               <h1
                 key={index}
-                className="gap-2 justify-center flex flex-col items-center text-center"
+                className="gap-2 hover:scale-105 transition-all ease-in-out text-white justify-center flex flex-col items-center text-center"
               >
                 {info.icon}
                 {info.link ? <a href={info.link}>{info.text}</a> : info.text}
@@ -77,7 +77,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="basis-2/4 flex  flex-col justify-start items-center px-10 gap-3">
-          <div className="text-0">
+          <div className="text-white">
             <h1 className="text-xl font-medium">QUICK LINK</h1>
           </div>
           <ul>
@@ -85,7 +85,7 @@ export default function Footer() {
               <li key={item.href}>
                 <Link href={item.href} legacyBehavior>
                   <a
-                    className={`no-underline transition-colors text-0 text-sm hover:text-5 justify-center items-center flex duration-200 ease-in-out py-3 px-5 rounded-full ${
+                    className={`no-underline transition-colors text-white text-sm hover:text-5 justify-center items-center flex duration-200 ease-in-out py-3 px-5 rounded-full ${
                       item.href === router.asPath
                     }`}
                   >
@@ -97,7 +97,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className="basis-1/2 flex flex-col justify-start items-center px-10 gap-3">
-          <div className="text-0">
+          <div className="text-white">
             <h1 className="text-xl font-medium">Connect with US</h1>
           </div>
           <div className="relative">
@@ -105,7 +105,7 @@ export default function Footer() {
               {socialLinks.map((link, index) => (
                 <DockIcon
                   key={index}
-                  className="bg-black/10 dark:bg-white/10 p-3"
+                  className="bg-white/10 dark:bg-white/10 p-3"
                   onClick={() => window.open(link.href, "_blank")}
                 >
                   <Image src={link.src} width={50} height={50} alt={link.alt} />
@@ -115,7 +115,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center text-white text-sm py-2 px-10 text-center rounded-t-full flex-wrap text-wrap bg-0">
+      <div className="flex justify-center items-center text-0 text-sm py-2 px-10 text-center rounded-t-full flex-wrap text-wrap bg-white">
         <p>Copyright © 2024 HIMATIF, Universtas Pelita Bangsa</p>
       </div>
     </footer>
