@@ -8,7 +8,7 @@ export default function Visimisi() {
     <div className="visi-misi flex justify-center items-center gap-10 max-md:flex-col m-10">
       <div className="relative flex h-[600px] max-md:w-full max-md:h-fit w-1/2 flex-col items-center justify-start p-10 overflow-hidden rounded-lg border bg-background md:shadow-xl">
         <span className="text-0 text-2xl">Visi</span>
-        <p className="font-poppins max-md:text-sm">
+        <p className="font-poppins text-0 max-md:text-sm">
           Membentuk Mahasiswa prodi infomatika Fakultas Teknik Universitas
           Pelita Bangsa Cikarang. yang mampu berfikir secara kritis, solutif,
           kreatif, inovatif dan mampu mengekspresikan diri serta bekerjasama
@@ -19,7 +19,7 @@ export default function Visimisi() {
       </div>
       <div className="relative flex h-[600px] max-md:w-full max-md:h-fit w-1/2 flex-col items-center justify-start p-10 overflow-hidden rounded-lg border bg-background md:shadow-xl">
         <p className="text-0 text-2xl">Misi</p>
-        <div className="font-poppins max-md:text-sm">
+        <div className="font-poppins text-0 max-md:text-sm">
           <span>
             • Menghimpun Mahasiswa prodi infomatika Fakultas Teknik Universitas
             Pelita Bangsa.

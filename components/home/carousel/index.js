@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import Banner from "@/public/image/banner1.jpg";
+import fetchData from "../news/fetchData";
 
 import "swiper/css";
 import "swiper/css/pagination";

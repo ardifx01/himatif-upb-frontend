@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import SparklesText from "../magicui/sparkles-text";
+import SparklesText from "../../magicui/sparkles-text";
 import BoxReveal from "@/components/magicui/box-reveal";
 import Visimisi from "../visimisi";
 
@@ -10,14 +10,14 @@ export default function Header() {
       <div>
         <BoxReveal>
           <SparklesText
-            className="max-md:text-xl py-10"
+            className="max-md:text-xl text-0 py-10"
             sparklesCount={50}
             text="HIMPUNANA MAHASISWA TEKNIK INFORMATIKA Universitas Pelita Bangsa"
           />
         </BoxReveal>
       </div>
       <BoxReveal>
-        <p className="text-lg max-md:text-sm font-poppins font-medium">
+        <p className="text-lg max-md:text-sm text-0 font-poppins font-medium">
           <span className="text-2">HIMATIF- Universitas Pelita Bangsa</span>{" "}
           adalah sebuah organisasi yang berfokus pada pengembangan keterampilan
           dan pengetahuan mahasiswa di bidang teknologi informasi. Kami

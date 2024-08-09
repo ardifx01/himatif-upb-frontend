@@ -8,6 +8,10 @@ import SparklesText from "@/components/magicui/sparkles-text";
 import { CoolMode } from "@/components/magicui/cool-mode";
 import { RiMenu5Fill } from "react-icons/ri";
 
+const handleClick = (link) => {
+  window.location.href = link;
+};
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [navbarColor, setNavbarColor] = useState("white");
@@ -57,12 +61,15 @@ const Navbar = () => {
         >
           <div className="flex justify-between w-full md:w-auto items-center">
             <div
+              onClick={() => {
+                handleClick("/");
+              }}
               data-aos="fade-right"
-              className="flex mx-auto items-center gap-3"
+              className="flex mx-auto cursor-pointer items-center gap-3"
             >
               <SparklesText
                 sparklesCount={10}
-                className="text-2xl mt-2 max-md:text-xl"
+                className="text-2xl text-0 mt-2 max-md:text-xl"
                 text="HIMATIF UPB"
               />
               <Image
