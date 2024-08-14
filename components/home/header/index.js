@@ -10,9 +10,14 @@ export default function Header() {
       <div>
         <BoxReveal>
           <SparklesText
-            className="max-md:text-xl text-0 py-10"
-            sparklesCount={50}
-            text="HIMPUNANA MAHASISWA TEKNIK INFORMATIKA Universitas Pelita Bangsa"
+            className="max-md:text-xl text-0 pt-10"
+            sparklesCount={10}
+            text="HIMPUNANA MAHASISWA TEKNIK INFORMATIKA"
+          />
+          <SparklesText
+            className="max-md:text-xl text-0 pb-10"
+            sparklesCount={10}
+            text="Universitas Pelita Bangsa"
           />
         </BoxReveal>
       </div>
