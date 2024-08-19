@@ -50,7 +50,7 @@ const SparklesText = ({
 
   return (
     <div
-      className={cn("text-6xl font-bold", className)}
+      className={cn("font-bold", className)}
       {...props}
       style={{
         "--sparkles-first-color": `${colors.first}`,
