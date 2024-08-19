@@ -14,6 +14,7 @@ const handleClick = (link) => {
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [navbarColor, setNavbarColor] = useState("white");
   const [morph, setMorph] = useState("");
   const menuRef = useRef(null);
@@ -26,6 +27,9 @@ const Navbar = () => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setMenuOpen(false);
+        if (dropdownOpen) {
+          setDropdownOpen(false);
+        }
       }
     };
 
@@ -46,7 +50,7 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [dropdownOpen]);
 
   const router = useRouter();
 
@@ -69,7 +73,7 @@ const Navbar = () => {
               className="flex mx-auto cursor-pointer items-center gap-3"
             >
               <SparklesText
-                sparklesCount={10}
+                sparklesCount={5}
                 className="text-2xl text-0 mt-2 max-md:text-xl"
                 text="HIMATIF UPB"
               />
@@ -97,9 +101,75 @@ const Navbar = () => {
               menuOpen ? "flex" : "hidden"
             } md:flex`}
           >
+            <li>
+              <Link href="/" legacyBehavior>
+                <a
+                  className={`no-underline transition-colors text-0 text-sm justify-center items-center flex duration-500 ease-in-out pt-3 pb-2 px-5 rounded-full ${
+                    "/" === router.asPath
+                      ? "bg-white text-3"
+                      : "hover:bg-white hover:text-5"
+                  }`}
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setDropdownOpen(false);
+                  }}
+                >
+                  Home
+                </a>
+              </Link>
+            </li>
+            <li className="relative">
+              <button
+                className="no-underline transition-colors text-0 text-sm justify-center items-center flex duration-500 ease-in-out pt-3 pb-2 px-5 rounded-full hover:bg-white hover:text-5"
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+              >
+                Tentang Kami
+              </button>
+              {dropdownOpen && (
+                <ul className="absolute left-0 mt-2 w-48 z-20 text-0 bg-white border border-gray-200 rounded-xl shadow-lg">
+                  <li>
+                    <Link href="/profil" legacyBehavior>
+                      <a
+                        className="block px-4 py-2 text-sm  hover:text-5 rounded-xl hover:bg-gray-100"
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setDropdownOpen(false);
+                        }}
+                      >
+                        Profil
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about" legacyBehavior>
+                      <a
+                        className="block px-4 py-2 text-sm hover:text-5 rounded-xl hover:bg-gray-100"
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setDropdownOpen(false);
+                        }}
+                      >
+                        Sejarah
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact" legacyBehavior>
+                      <a
+                        className="block px-4 py-2 text-sm  hover:text-5 rounded-xl hover:bg-gray-100"
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setDropdownOpen(false);
+                        }}
+                      >
+                        Contact Us
+                      </a>
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
             {[
-              { href: "/", label: "Home" },
-              { href: "/profil", label: "Profil" },
               { href: "/news", label: "TIF News" },
               { href: "/lab", label: "LAB" },
               { href: "/tif", label: "TIF" },
@@ -113,7 +183,10 @@ const Navbar = () => {
                         ? "bg-white text-3"
                         : "hover:bg-white hover:text-5"
                     }`}
-                    onClick={() => setMenuOpen(false)}
+                    onClick={() => {
+                      setMenuOpen(false);
+                      setDropdownOpen(false);
+                    }}
                   >
                     {item.label}
                   </a>
