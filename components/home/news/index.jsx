@@ -1,7 +1,6 @@
 import { React, useEffect, useState } from "react";
 import fetchData from "./fetchData";
 import { HiSpeakerphone } from "react-icons/hi";
-import { FollowerPointerCard } from "@/components/ui/following-pointer";
 
 export default function Index() {
   const [news, setNews] = useState();
@@ -13,6 +12,10 @@ export default function Index() {
     };
     getNews();
   }, []);
+
+  const handleClick = () => {
+    window.location.href = "/news";
+  };
 
   return (
     <div className="flex flex-col justify-center gap-14 items-center">
@@ -29,13 +32,19 @@ export default function Index() {
                 className={`shadow-md w-11/12 flex ${
                   item.isMaxMd
                     ? "flex-col gap-4"
-                    : "justify-center max-md:flex-col gap-20 max-md:gap-4"
-                } rounded-setup items-center p-5`}
-                key={index}
+                    : "justify-between gap-20 max-md:gap-4"
+                } rounded-setup items-center p-3 border-x-2 border-y-2 border-[#fff]`}
+                key={item.id}
               >
-                <FollowerPointerCard />
-                <div className="p-2 bg-4 rounded-full">
-                  <HiSpeakerphone fill="#0c2b4b" size={30} />
+                <div
+                  className="p-2 bg-0 rounded-full"
+                  style={{
+                    backgroundColor: `#${Math.floor(
+                      Math.random() * 16777215
+                    ).toString(16)}`,
+                  }}
+                >
+                  <HiSpeakerphone fill="#fff" size={50} />
                 </div>
                 <span className="max-md:hidden">|</span>
                 <div>
@@ -50,13 +59,20 @@ export default function Index() {
 
                 <span className="max-md:hidden">|</span>
                 <div className="w-72 text-wrap ">
-                  <h1 className="flex text-wrap">{item.title}</h1>
+                  <h1 className="flex text-wrap  text-1xl">
+                    {item.title.substring(0, 50) + "..."}
+                  </h1>
                 </div>
 
-                <button>{"See More >>"}</button>
+                <button className="pr-10">{"See More  "}</button>
               </div>
             ))}
-        <button className="font-manguiera text-lg text-0">More</button>
+        <button
+          onClick={handleClick}
+          className="font-manguiera hover:bg-1 py-2 px-3 rounded-setup hover:text-white text-lg text-0"
+        >
+          More
+        </button>
       </div>
     </div>
   );

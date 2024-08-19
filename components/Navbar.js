@@ -30,12 +30,14 @@ const Navbar = () => {
     };
 
     const handleScroll = () => {
-      setNavbarColor(window.scrollY > 100 ? "backdrop-blur-xl" : "bg-white");
-      setMorph(
-        window.scrollY > 100
-          ? "w-full top-5 justify-center items-center fixed flex z-50 transition-all ease-in-out duration-500"
-          : ""
-      );
+      if (window.innerWidth > 768) {
+        setNavbarColor(window.scrollY > 100 ? "backdrop-blur-xl" : "bg-white");
+        setMorph(
+          window.scrollY > 100
+            ? "w-full top-5 justify-center items-center fixed flex z-50 transition-all ease-in-out duration-500"
+            : ""
+        );
+      }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -54,7 +56,6 @@ const Navbar = () => {
     >
       <div className="w-3/4 justify-center items-center">
         <nav
-          data-aos="fade-down"
           className={`font-manguiera flex flex-col md:flex-row-reverse gap-10 ${
             menuOpen ? "max-md:rounded-[25px]" : "max-md:rounded-[90px]"
           } justify-between items-center w-full max-md:p-0 px-10 py-2 border-white border-2 transition-all ease-in-out rounded-full ${navbarColor}`}
