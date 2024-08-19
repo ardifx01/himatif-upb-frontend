@@ -13,8 +13,28 @@ const fetchData = async () => {
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
-    throw error; // Rethrow the error to be handled by the caller
+    throw error;
   }
 };
+
+export async function getStaticProps() {
+  try {
+    const data = await fetchData();
+    return {
+      props: {
+        news: data,
+      },
+      revalidate: 60, // Revalidate every 60 seconds
+    };
+  } catch (error) {
+    console.error("Error in getStaticProps:", error);
+    return {
+      props: {
+        news: [],
+      },
+      revalidate: 60,
+    };
+  }
+}
 
 export default fetchData;
