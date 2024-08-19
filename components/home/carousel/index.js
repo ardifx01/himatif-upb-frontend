@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import Banner from "@/public/image/banner1.jpg";
-import fetchData from "../news/fetchData";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -26,13 +25,13 @@ export default function App() {
       modules={[Autoplay, Pagination, Navigation]}
     >
       <SwiperSlide>
-        <Image src={Banner} alt="Banner" />
+        <Image priority={false} src={Banner} alt="Banner" />
       </SwiperSlide>
       <SwiperSlide>
-        <Image src={Banner} alt="Banner" />
+        <Image priority={false} src={Banner} alt="Banner" />
       </SwiperSlide>
       <SwiperSlide>
-        <Image src={Banner} alt="Banner" />
+        <Image priority={false} src={Banner} alt="Banner" />
       </SwiperSlide>
     </Swiper>
   );

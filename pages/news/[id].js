@@ -1,9 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from "next/router";
-import fetchData from "./fetchData";
+import fetchData from "@/pages/news/fetchData";
 import { useState, useEffect } from "react";
 import SparklesText from "@/components/magicui/sparkles-text";
-import { cn } from "@/lib/utils";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 
 const News = () => {

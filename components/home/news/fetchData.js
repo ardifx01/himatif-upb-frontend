@@ -13,7 +13,7 @@ const fetchData = async () => {
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
-    return null;
+    throw error; // Rethrow the error to be handled by the caller
   }
 };
 
