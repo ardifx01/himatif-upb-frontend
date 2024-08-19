@@ -1,3 +1,5 @@
+"use client";
+import { LinkPreview } from "@/components/ui/link-preview";
 import React from "react";
 import { MdLocationPin } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -8,22 +10,6 @@ import { Dock, DockIcon } from "@/components/magicui/dock";
 import Image from "next/image";
 export default function Footer() {
   const router = useRouter();
-
-  const contactInfo = [
-    {
-      icon: <MdLocationPin fill="white" size={29} />,
-      text: "Jl. Inspeksi Kalimalang No.9, Cibatu, Cikarang Sel., Kabupaten Bekasi, Jawa Barat 17530",
-    },
-    {
-      icon: <BsFillTelephoneFill fill="white" size={20} />,
-      text: "089631149187",
-    },
-    {
-      icon: <MdEmail fill="white" size={20} />,
-      text: "himatif@pelitabangsa.ac.id",
-      link: "mailto:himatif@pelitabangsa.ac.id",
-    },
-  ];
 
   const quickLinks = [
     { href: "/", label: "Home" },
@@ -65,15 +51,26 @@ export default function Footer() {
             <h1 className="text-xl font-medium">HIMATIF</h1>
           </div>
           <div className="text-sm flex flex-col gap-5">
-            {contactInfo.map((info, index) => (
-              <h1
-                key={index}
+            <h1 className="gap-2 hover:scale-105 transition-all ease-in-out text-white justify-center flex flex-col items-center text-center">
+              <MdLocationPin fill="white" size={29} />
+              <LinkPreview
+                url="https://maps.app.goo.gl/mpau47PP2mvuzEga6"
                 className="gap-2 hover:scale-105 transition-all ease-in-out text-white justify-center flex flex-col items-center text-center"
               >
-                {info.icon}
-                {info.link ? <a href={info.link}>{info.text}</a> : info.text}
-              </h1>
-            ))}
+                Jl. Inspeksi Kalimalang No.9, Cibatu, Cikarang Sel., Kabupaten
+                Bekasi, Jawa Barat 17530
+              </LinkPreview>
+            </h1>
+            <h1 className="gap-2 hover:scale-105 transition-all ease-in-out text-white justify-center flex flex-col items-center text-center">
+              <BsFillTelephoneFill fill="white" size={20} />
+              089631149187
+            </h1>
+            <h1 className="gap-2 hover:scale-105 transition-all ease-in-out text-white justify-center flex flex-col items-center text-center">
+              <MdEmail fill="white" size={20} />
+              <a href="mailto:himatif@pelitabangsa.ac.id">
+                himatif@pelitabangsa.ac.id
+              </a>
+            </h1>
           </div>
         </div>
         <div className="basis-2/4 flex  flex-col justify-start items-center px-10 gap-3">
