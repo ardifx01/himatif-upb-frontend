@@ -17,7 +17,7 @@ export default function Footer() {
     { href: "/news", label: "TIF News" },
     { href: "/lab", label: "LAB" },
     { href: "/tif", label: "TIF" },
-    { href: "/pengurus", label: "Pengurus" },
+    { href: "/staff", label: "Pengurus" },
   ];
 
   const socialLinks = [

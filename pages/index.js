@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <main className="">
       <header>
-        <div className="max-md:mb-5" data-aos="fade-out">
+        <div className="max-md:mb-5" data-aos="fade-up">
           <Carousel />
         </div>
         <div>
