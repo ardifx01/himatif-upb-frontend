@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import fetchData from "@/components/home/news/fetchDataHome";
+import fetchData from "@/pages/home/news/fetchDataHome";
 import { HiSpeakerphone } from "react-icons/hi";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 

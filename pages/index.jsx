@@ -1,10 +1,10 @@
 import "aos/dist/aos.css"; // Import AOS styles
 import { useEffect } from "react";
 import AOS from "aos";
-import Carousel from "@/components/home/carousel";
-import Header from "@/components/home/header";
-import Department from "@/components/home/homeDepartment";
-import News from "@/components/home/news";
+import Carousel from "@/pages/home/carousel";
+import Header from "@/pages/home/header";
+import Department from "@/pages/home/homeDepartment";
+import News from "@/pages/home/news";
 
 const Home = () => {
   useEffect(() => {
