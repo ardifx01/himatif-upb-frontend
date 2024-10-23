@@ -121,12 +121,16 @@ const Navbar = () => {
             <li className="relative">
               <button
                 className="no-underline transition-colors text-0 text-sm justify-center items-center flex duration-500 ease-in-out pt-3 pb-2 px-5 rounded-full hover:bg-white hover:text-5"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
+                onMouseEnter={() => setDropdownOpen(true)}
+                onClick={() => (window.location.href = "/profil")}
               >
                 Tentang Kami
               </button>
               {dropdownOpen && (
-                <ul className="absolute left-0 mt-2 w-48 z-20 text-0 bg-white border border-gray-200 rounded-xl shadow-lg">
+                <ul
+                  onMouseLeave={() => setDropdownOpen(false)}
+                  className="absolute left-0 mt-2 w-48 z-20 text-0 bg-white border border-gray-200 rounded-xl shadow-lg"
+                >
                   <li>
                     <Link href="/profil" legacyBehavior>
                       <a

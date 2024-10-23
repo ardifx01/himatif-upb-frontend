@@ -1,8 +1,9 @@
 import axios from "axios";
+import api from "@/config/api";
 
 const fetchData = async () => {
   try {
-    const response = await axios.get("http://localhost:4000/news");
+    const response = await axios.get(`${api}/news`);
     return response.data;
   } catch (error) {
     console.error("Error fetching data:", error);

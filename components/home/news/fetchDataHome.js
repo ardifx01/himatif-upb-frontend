@@ -1,6 +1,8 @@
+import api from "@/config/api";
+
 const fetchData = async () => {
   try {
-    const response = await fetch(`http://localhost:4000/news`, {
+    const response = await fetch(`${api}/news`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
