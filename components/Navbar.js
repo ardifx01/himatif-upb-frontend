@@ -34,14 +34,16 @@ const Navbar = () => {
     };
 
     const handleScroll = () => {
-      if (window.innerWidth > 768) {
-        setNavbarColor(window.scrollY > 100 ? "backdrop-blur-xl" : "bg-white");
-        setMorph(
-          window.scrollY > 100
-            ? "w-full top-5 justify-center items-center fixed flex z-50 transition-all ease-in-out duration-500"
-            : ""
-        );
-      }
+      setNavbarColor(
+        window.scrollY > 1
+          ? "backdrop-blur-sm border-himatif "
+          : "bg-white border-white"
+      );
+      setMorph(
+        window.scrollY > 1
+          ? "w-full top-5 justify-center items-center fixed flex z-50 transition-all ease-in-out duration-500"
+          : ""
+      );
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -62,7 +64,7 @@ const Navbar = () => {
         <nav
           className={`font-manguiera flex flex-col md:flex-row-reverse gap-10 ${
             menuOpen ? "max-md:rounded-[25px]" : "max-md:rounded-[90px]"
-          } justify-between items-center w-full max-md:p-0 px-10 py-2 border-white border-2 transition-all ease-in-out rounded-full ${navbarColor}`}
+          } justify-between items-center w-full max-md:p-0 px-10  py-2 border-[2px] transition-all ease-in-out rounded-full ${navbarColor}`}
         >
           <div className="flex justify-between w-full md:w-auto items-center">
             <div
@@ -107,7 +109,7 @@ const Navbar = () => {
                   className={`no-underline transition-colors text-0 text-sm justify-center items-center flex duration-500 ease-in-out pt-3 pb-2 px-5 rounded-full ${
                     "/" === router.asPath
                       ? "bg-white text-3"
-                      : "hover:bg-white hover:text-5"
+                      : "hover:bg-white hover:text-5 hover:shadow-md"
                   }`}
                   onClick={() => {
                     setMenuOpen(false);
@@ -120,9 +122,9 @@ const Navbar = () => {
             </li>
             <li className="relative">
               <button
-                className="no-underline transition-colors text-0 text-sm justify-center items-center flex duration-500 ease-in-out pt-3 pb-2 px-5 rounded-full hover:bg-white hover:text-5"
+                className="no-underline transition-colors hover:shadow-md text-0 text-sm justify-center items-center flex duration-500 ease-in-out pt-3 pb-2 px-5 rounded-full hover:bg-white hover:text-5"
                 onMouseEnter={() => setDropdownOpen(true)}
-                onClick={() => (window.location.href = "/profil")}
+                onClick={() => (window.location.href = "/profile")}
               >
                 Tentang Kami
               </button>
@@ -132,22 +134,22 @@ const Navbar = () => {
                   className="absolute left-0 mt-2 w-48 z-20 text-0 bg-white border border-gray-200 rounded-xl shadow-lg"
                 >
                   <li>
-                    <Link href="/profil" legacyBehavior>
+                    <Link href="/profile" legacyBehavior>
                       <a
-                        className="block px-4 py-2 text-sm  hover:text-5 rounded-xl hover:bg-gray-100"
+                        className="block px-4 py-2 text-sm hover:shadow-md  hover:text-5 rounded-xl hover:bg-gray-100 "
                         onClick={() => {
                           setMenuOpen(false);
                           setDropdownOpen(false);
                         }}
                       >
-                        Profil
+                        Profile
                       </a>
                     </Link>
                   </li>
                   <li>
                     <Link href="/about" legacyBehavior>
                       <a
-                        className="block px-4 py-2 text-sm hover:text-5 rounded-xl hover:bg-gray-100"
+                        className="block px-4 py-2 text-sm hover:text-5 hover:shadow-md rounded-xl hover:bg-gray-100"
                         onClick={() => {
                           setMenuOpen(false);
                           setDropdownOpen(false);
@@ -160,7 +162,7 @@ const Navbar = () => {
                   <li>
                     <Link href="/contact" legacyBehavior>
                       <a
-                        className="block px-4 py-2 text-sm  hover:text-5 rounded-xl hover:bg-gray-100"
+                        className="block px-4 py-2 text-sm hover:shadow-md hover:text-5 rounded-xl hover:bg-gray-100"
                         onClick={() => {
                           setMenuOpen(false);
                           setDropdownOpen(false);
@@ -185,7 +187,7 @@ const Navbar = () => {
                     className={`no-underline transition-colors text-0 text-sm justify-center items-center flex duration-500 ease-in-out pt-3 pb-2 px-5 rounded-full ${
                       item.href === router.asPath
                         ? "bg-white text-3"
-                        : "hover:bg-white hover:text-5"
+                        : "hover:bg-white hover:text-5 hover:shadow-md"
                     }`}
                     onClick={() => {
                       setMenuOpen(false);

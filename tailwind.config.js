@@ -56,6 +56,7 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        himatif: "#0c2b4b",
         0: "#0c2b4b",
         1: "#F40307",
         2: "#C9941E",
