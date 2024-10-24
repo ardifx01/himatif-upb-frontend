@@ -4,6 +4,7 @@ import fetchData from "@/pages/news/fetchDataNews";
 import { useState, useEffect } from "react";
 import SparklesText from "@/components/magicui/sparkles-text";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
+import api from "@/config/api";
 
 const News = () => {
   const [news, setNews] = useState([]);
@@ -70,7 +71,7 @@ const News = () => {
           />
           <img
             className=" shadow-md"
-            src={`http://localhost:4000${foundNews.imageUrl}`}
+            src={`${api}${foundNews.imageUrl}`}
             alt={foundNews.title}
             width={1000}
           />
