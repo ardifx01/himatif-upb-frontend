@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import fetchDataProfile from "./fetchData";
 import logo from "@/public/image/logo.png";
+import Button from "@/components/button";
 
 const AboutSection = ({ profile }) => (
   <div className="about flex flex-col justify-center items-center border-b-2">
@@ -19,7 +20,14 @@ const AboutSection = ({ profile }) => (
 
 const ContainerSection = () => (
   <div className="container flex">
-    <div className="actionbutton flex w-1/3"></div>
+    <div className="actionbutton flex w-1/3">
+      <Button
+        text="hallo"
+        onClick={() => {
+          console.log("Hallo!");
+        }}
+      />
+    </div>
     <div className="ourhistory flex"></div>
   </div>
 );
@@ -30,7 +38,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const getProfile = async () => {
       const data = await fetchDataProfile();
-      setProfile(data); 
+      setProfile(data);
     };
     getProfile();
   }, []);
