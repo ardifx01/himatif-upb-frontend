@@ -1,8 +1,8 @@
 import api from "@/config/api";
 
-const fetchDataProfile = async () => {
+const fetchDataHistory = async () => {
   try {
-    const response = await fetch(`${api}/profile/profile`, {
+    const response = await fetch(`${api}/history`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -20,7 +20,7 @@ const fetchDataProfile = async () => {
 
 export async function getStaticProps() {
   try {
-    const data = await fetchDataProfile();
+    const data = await fetchDataHistory();
     return {
       props: {
         profile: data,
@@ -38,4 +38,4 @@ export async function getStaticProps() {
   }
 }
 
-export default fetchDataProfile;
+export default fetchDataHistory;
