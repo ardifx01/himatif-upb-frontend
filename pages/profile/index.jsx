@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import fetchDataProfile from "./fetchData";
 import logo from "@/public/image/logo.png";
-import Button from "@/components/button";
+import ActionSection from "./action";
 import History from "./history";
 
 const AboutSection = ({ profile }) => (
@@ -18,23 +18,6 @@ const AboutSection = ({ profile }) => (
         <p>Memuat...</p>
       )}
     </div>
-  </div>
-);
-
-const ActionSection = () => (
-  <div className="actionbutton flex-col gap-5 max-md:w-full flex w-1/3">
-    <Button
-      text="About Us"
-      onClick={() => {
-        window.location.href = "/profile";
-      }}
-    />
-    <Button
-      text="Our Location"
-      onClick={() => {
-        window.location.href = "/profile/location";
-      }}
-    />
   </div>
 );
 

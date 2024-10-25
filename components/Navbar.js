@@ -147,7 +147,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/about" legacyBehavior>
+                    <Link href="/profile/location" legacyBehavior>
                       <a
                         className="block px-4 py-2 text-sm hover:text-5 hover:shadow-md rounded-xl hover:bg-gray-100"
                         onClick={() => {
@@ -155,7 +155,7 @@ const Navbar = () => {
                           setDropdownOpen(false);
                         }}
                       >
-                        Sejarah
+                        Our Location
                       </a>
                     </Link>
                   </li>
