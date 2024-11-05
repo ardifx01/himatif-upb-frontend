@@ -1,7 +1,4 @@
 import Card from "@/components/ui/3dCard";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const departments = [
   {
@@ -38,12 +35,6 @@ const departments = [
 ];
 
 export default function Index() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  }, []);
-
   return (
     <div className="flex mt-24 flex-col justify-center items-center">
       <h1 className="text-4xl text-0 font-manguiera">Department</h1>

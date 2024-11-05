@@ -2,9 +2,16 @@ import { React, useEffect, useState } from "react";
 import fetchData from "@/pages/home/news/fetchDataHome";
 import { HiSpeakerphone } from "react-icons/hi";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Index() {
   const [news, setNews] = useState();
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
 
   useEffect(() => {
     const getNews = async () => {
@@ -41,6 +48,7 @@ export default function Index() {
                 } rounded-setup items-center p-3 border-x-2 border-y-2 max-md:rounded-3xl hover:scale-105 transition-all duration-500 ease-in-out border-[#fff]`}
                 key={item.id}
                 onClick={() => handleMoreClick(item.id)}
+                data-aos="fade-up"
               >
                 <div
                   className="p-2 bg-0 rounded-full max-md:p-1"

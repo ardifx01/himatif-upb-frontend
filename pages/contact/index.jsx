@@ -1,5 +1,6 @@
 import React from "react";
+import EmailForm from "./emailForm";
 
 export default function constct() {
-  return <div>Contact Us</div>;
+  return <EmailForm />;
 }

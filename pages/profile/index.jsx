@@ -8,7 +8,7 @@ import History from "./history";
 const AboutSection = ({ profile }) => (
   <div className="about flex flex-col justify-center items-center border-b-2">
     <div className="flex w-full justify-center items-center">
-      <h1 className="text-4xl text-0 font-manguiera">About Himatif</h1>
+      <h1 className="text-4xl text-0 font-manguiera">About HIMATIF</h1>
     </div>
     <div className="flex justify-center items-center flex-col mb-10 text-center">
       <Image src={logo} alt="logo" />

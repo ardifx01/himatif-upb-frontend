@@ -1,19 +1,13 @@
-import "aos/dist/aos.css"; // Import AOS styles
-import { useEffect } from "react";
-import AOS from "aos";
+import React from "react";
+import BentoNews from "./bentoNews";
 
-const About = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  }, []);
+export default function News() {
   return (
-    <div data-aos="zoom-in-up">
-      <title>News</title>
-      <h1>News</h1>
+    <div className="flex flex-col mt-10 ">
+      <div className="flex w-full justify-center pb-20 border-b-2 items-center">
+        <h1 className="text-4xl text-0 font-manguiera">HIMATIF News</h1>
+      </div>
+      <BentoNews />
     </div>
   );
-};
-
-export default About;
+}
