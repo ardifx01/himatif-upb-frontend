@@ -14,8 +14,10 @@ const postData = async (data) => {
     }
     const result = await response.json();
     console.log(result);
+    return result;
   } catch (error) {
     console.error("There was a problem with the fetch operation:", error);
+    throw error; // Menyebarkan error untuk ditangani oleh caller
   }
 };
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Timeline } from "@/components/ui/timeline";
-import fetchDataHistory from "./fetchData";
+import fetchDataHistory from "../../../config/historyApi/fetchData";
 
 function History() {
   const [history, setHistory] = useState([]);

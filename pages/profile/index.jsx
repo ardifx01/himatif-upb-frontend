@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import fetchDataProfile from "./fetchData";
+import fetchDataProfile from "../../config/profileApi/fetchData";
 import logo from "@/public/image/logo.png";
 import ActionSection from "./action";
 import History from "./history";

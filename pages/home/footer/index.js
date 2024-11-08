@@ -1,4 +1,3 @@
-"use client";
 import { LinkPreview } from "@/components/ui/link-preview";
 import React from "react";
 import { MdLocationPin } from "react-icons/md";
@@ -8,12 +7,14 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import Image from "next/image";
-export default function Footer() {
+function Footer() {
   const router = useRouter();
 
   const quickLinks = [
     { href: "/", label: "Home" },
-    { href: "/profil", label: "Profil" },
+    { href: "/profile", label: "Profile" },
+    { href: "/profile/location", label: "Location" },
+    { href: "/contact", label: "Contact Us" },
     { href: "/news", label: "TIF News" },
     { href: "/lab", label: "LAB" },
     { href: "/tif", label: "TIF" },
@@ -118,3 +119,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer;
