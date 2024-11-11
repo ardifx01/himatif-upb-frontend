@@ -22,7 +22,7 @@ function EmailForm() {
     try {
       const response = await postData(data);
       console.log("Response dari postData:", response);
-      alert("Email Sent Successfully");
+      alert("succes");
       setData({
         subject: "",
         name: "",

@@ -124,7 +124,6 @@ const Navbar = () => {
               <button
                 className="no-underline transition-colors hover:shadow-md text-0 text-sm justify-center items-center flex duration-500 ease-in-out pt-3 pb-2 px-5 rounded-full hover:bg-white hover:text-5"
                 onMouseEnter={() => setDropdownOpen(true)}
-                onClick={() => (window.location.href = "/profile")}
               >
                 Tentang Kami
               </button>

@@ -15,28 +15,19 @@ const fetchData = async () => {
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
-    throw error;
+    // Tidak menghentikan proses jika gagal fetch
+    return [];
   }
 };
 
 export async function getStaticProps() {
-  try {
-    const data = await fetchData();
-    return {
-      props: {
-        news: data,
-      },
-      revalidate: 60, // Revalidate every 60 seconds
-    };
-  } catch (error) {
-    console.error("Error in getStaticProps:", error);
-    return {
-      props: {
-        news: [],
-      },
-      revalidate: 60,
-    };
-  }
+  const data = await fetchData();
+  return {
+    props: {
+      news: data,
+    },
+    revalidate: 60, // Revalidate every 60 seconds
+  };
 }
 
 export default fetchData;
