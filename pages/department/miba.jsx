@@ -1,13 +1,13 @@
 import React from "react";
 import Head from "next/head";
 
-export default function Litbang() {
+export default function Miba() {
   return (
     <div>
       <Head>
-        <title>Litbang - Himatif Website</title>
+        <title>Miba - Himatif Website</title>
       </Head>
-      <h1>Litbang</h1>
+      <h1>Miba</h1>
     </div>
   );
 }

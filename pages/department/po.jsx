@@ -1,13 +1,13 @@
 import React from "react";
 import Head from "next/head";
 
-export default function Litbang() {
+export default function PO() {
   return (
     <div>
       <Head>
-        <title>Litbang - Himatif Website</title>
+        <title>PO - Himatif Website</title>
       </Head>
-      <h1>Litbang</h1>
+      <h1>PO</h1>
     </div>
   );
 }

@@ -6,18 +6,21 @@ const departments = [
     image: require("@/public/image/po_logo.png"),
     description:
       "Departemen yang berfokus pada pengembangan dan peningkatan kualitas organisasi",
+    link: "/department/po",
   },
   {
     name: "Komunikasi dan Informasi (MEDKOMINFO)",
     image: require("@/public/image/medkom_logo.png"),
     description:
       "Departemen yang mengurus dan mengelola informasi serta komunikasi internal dan eksternal",
+    link: "/department/medkominfo",
   },
   {
     name: "Minat dan Bakat (MIBA)",
     image: require("@/public/image/miba_logo.png"),
     description:
       "Departemen yang menyalurkan dan mengembangkan minat serta bakat para mahasiswa",
+    link: "/department/miba",
   },
   {
     name: "Penelitian dan Pengembangan (LITBANG)",
@@ -31,6 +34,7 @@ const departments = [
     image: require("@/public/image/hubinek_logo.png"),
     description:
       "Departemen yang menjalin dan mengembangkan hubungan baik dengan pihak internal maupun eksternal",
+    link: "/department/hubinex",
   },
 ];
 

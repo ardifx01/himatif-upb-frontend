@@ -3,12 +3,17 @@
 import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import Link from "next/link";
 
-const handleClick = (link) => {
-  if (link) {
-    window.open(link, "_blank");
-  }
-};
+// const handleClick = (link) => {
+//   if (link) {
+//     return (
+//       <Link href={link} passHref>
+//         <a target="_blank"></a>
+//       </Link>
+//     );
+//   }
+// };
 
 export default function ThreeDCard({ name, description, image, link }) {
   return (
@@ -39,17 +44,16 @@ export default function ThreeDCard({ name, description, image, link }) {
             alt="thumbnail"
           />
         </CardItem>
-        <div
-          onClick={() => handleClick(link)}
-          className="flex justify-between items-center mt-20"
-        >
+        <div className="flex justify-between items-center mt-20">
           <CardItem
             translateZ={20}
             translateX={40}
             as="button"
-            className="px-4 py-2 rounded-xl bg-0 dark:bg-white dark:text-black text-white text-xs font-bold"
+            className="py-2 rounded-xl bg-0 dark:bg-white dark:text-black text-white text-xs font-bold"
           >
-            Read More
+            <Link className="p-5" href={link}>
+              Read More
+            </Link>
           </CardItem>
         </div>
       </CardBody>

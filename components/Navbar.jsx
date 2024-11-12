@@ -177,8 +177,8 @@ const Navbar = () => {
             {[
               { href: "/news", label: "TIF News" },
               { href: "/lab", label: "LAB" },
-              { href: "/tif", label: "TIF" },
-              { href: "/staff", label: "Pengurus" },
+              { href: "/galery", label: "Galery" },
+              { href: "/staff", label: "Staff" },
             ].map((item) => (
               <li key={item.href}>
                 <Link href={item.href} legacyBehavior>
