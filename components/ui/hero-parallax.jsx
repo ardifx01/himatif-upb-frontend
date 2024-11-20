@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-export const HeroParallax = ({ products, title, description }) => {
+export const HeroParallax = ({ products, title, description, proker }) => {
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);
@@ -45,7 +45,7 @@ export const HeroParallax = ({ products, title, description }) => {
       ref={ref}
       className="h-[300vh] py-0 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
-      <Header title={title} description={description} />
+      <Header title={title} description={description} proker={proker} />
       <motion.div
         style={{
           rotateX,
@@ -87,7 +87,7 @@ export const HeroParallax = ({ products, title, description }) => {
   );
 };
 
-export const Header = ({ title, description }) => {
+export const Header = ({ title, description, proker }) => {
   return (
     <div className="max-w-7xl relative mx-auto py-10 md:py-40 px-4 w-full  left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
@@ -96,6 +96,12 @@ export const Header = ({ title, description }) => {
       <div
         className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200"
         dangerouslySetInnerHTML={{ __html: description }}
+      ></div>
+      <br />
+      <h1 className="text-xl font-manguiera">Program Kerja</h1>
+      <div
+        className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200"
+        dangerouslySetInnerHTML={{ __html: proker }}
       ></div>
     </div>
   );
@@ -126,7 +132,7 @@ export const ProductCard = ({ product, translate }) => {
         />
       </Link>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+      <h2 className="absolute top-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
         {product.title}
       </h2>
     </motion.div>
