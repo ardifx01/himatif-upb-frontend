@@ -6,6 +6,7 @@ const nextConfig = {
       "localhost",
       "aceternity.com",
       "images.unsplash.com",
+      "primefaces.org",
     ],
   },
 };

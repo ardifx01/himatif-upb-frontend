@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import postData from "@/config/emailFormApi/api/PostDatakritik";
+import postData from "@/config/emailFormApi/api/PostDataKritik";
 
 export default function Index() {
   const [isFormVisible, setIsFormVisible] = useState(false);
