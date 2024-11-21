@@ -4,7 +4,7 @@ import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import fetchDataGalery from "@/config/galeryApi/fetchData";
 import { useState, useEffect } from "react";
 
-export function AppleCardsCarouselDemo({ dep }) {
+export function GaleryCard({ dep }) {
   const [galery, setGalery] = useState([]);
 
   useEffect(() => {
@@ -39,11 +39,12 @@ export function AppleCardsCarouselDemo({ dep }) {
 export default function GaleryPage() {
   return (
     <>
-      <AppleCardsCarouselDemo dep={"Pengembangan Organisasi"} />
-      <AppleCardsCarouselDemo dep={"Hubungan Internal dan External"} />
-      <AppleCardsCarouselDemo dep={"Penelitian dan Pengembangan"} />
-      <AppleCardsCarouselDemo dep={"Media Komunikasi dan Informasi"} />
-      <AppleCardsCarouselDemo dep={"Minat dan Bakat"} />
+      <GaleryCard dep={"Himatif"} />
+      <GaleryCard dep={"Pengembangan Organisasi"} />
+      <GaleryCard dep={"Media Komunikasi dan Informasi"} />
+      <GaleryCard dep={"Hubungan Internal dan External"} />
+      <GaleryCard dep={"Penelitian dan Pengembangan"} />
+      <GaleryCard dep={"Minat dan Bakat"} />
     </>
   );
 }

@@ -104,12 +104,55 @@ module.exports = {
             "background-position": "calc(100% + var(--shimmer-width)) 0",
           },
         },
+        jiggle: {
+          "0%": {
+            transform: "scale3d(1, 1, 1)",
+          },
+          "30%": {
+            transform: "scale3d(1.25, 0.75, 1)",
+          },
+          "40%": {
+            transform: "scale3d(0.75, 1.25, 1)",
+          },
+          "50%": {
+            transform: "scale3d(1.15, 0.85, 1)",
+          },
+          "65%": {
+            transform: "scale3d(0.95, 1.05, 1)",
+          },
+          "75%": {
+            transform: "scale3d(1.05, 0.95, 1)",
+          },
+          "100%": {
+            transform: "scale3d(1, 1, 1)",
+          },
+        },
+        "fade-in-bouncedown": {
+          "0%": {
+            opacity: 0,
+            transform: "translate3d(0%, -100%, 0)",
+          },
+          "33%": {
+            opacity: 0.5,
+            transform: "translate3d(0%, 0%, 0)",
+          },
+          "66%": {
+            opacity: 0.7,
+            transform: "translate3d(0%, -20%, 0)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translate3d(0, 0, 0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         grid: "grid 15s linear infinite",
         shimmer: "shimmer 8s infinite",
+        jiggle: "jiggle 0.6s ease-in-out 0.25s 1",
+        fadeinbouncedown: "fade-in-bouncedown 1s ease-in-out 0.25s 1",
       },
     },
   },

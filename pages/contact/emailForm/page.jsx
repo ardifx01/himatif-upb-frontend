@@ -1,5 +1,5 @@
 import postData from "../../../config/emailFormApi/api/PostData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -15,6 +15,7 @@ function EmailForm() {
     company: "",
     body: "",
   });
+  const [isAlertVisible, setIsAlertVisible] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -22,7 +23,6 @@ function EmailForm() {
     try {
       const response = await postData(data);
       console.log("Response dari postData:", response);
-      alert("Email Sent Successfully");
       setData({
         subject: "",
         name: "",
@@ -31,16 +31,35 @@ function EmailForm() {
         company: "",
         body: "",
       });
+      setIsAlertVisible(true);
     } catch (error) {
       console.error("Error saat mengirim email:", error);
       alert("Email Sent Failed: " + error.message);
     }
   };
+
+  useEffect(() => {
+    if (isAlertVisible) {
+      const timer = setTimeout(() => {
+        setIsAlertVisible(false);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [isAlertVisible]);
+
   return (
     <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
       <h2 className="font-bold text-xl text-5 dark:text-neutral-200">
         Mail Form
       </h2>
+      {isAlertVisible && (
+        <div
+          class="p-4 mb-4 animate-fadeinbouncedown text-sm fixed top-30 right-50 text-indigo-600 rounded-xl bg-indigo-50 border border-indigo-400 font-normal"
+          role="alert"
+        >
+          <span class="font-semibold mr-2">Alert</span> Your email has been sent
+        </div>
+      )}
       <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
         Send Email to Our Organization
       </p>
