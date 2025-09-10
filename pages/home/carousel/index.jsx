@@ -1,9 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
-import Banner from "@/public/image/banner1.jpg";
 import fetchData from "@/config/bannerApi/fetchData";
 import { useEffect, useState } from "react";
-import api from "@/config/api";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -41,15 +39,6 @@ export default function App() {
       }}
       modules={[Autoplay, Pagination, Navigation]}
     >
-      {/* <SwiperSlide>
-        <Image priority={false} src={Banner} alt="Banner" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Image priority={false} src={Banner} alt="Banner" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Image priority={false} src={Banner} alt="Banner" />
-      </SwiperSlide> */}
       {bannerData.map((banner) => {
         return (
           <SwiperSlide key={banner.id}>

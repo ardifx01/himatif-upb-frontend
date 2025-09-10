@@ -15,7 +15,6 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useOutsideClick } from "@/hooks/use-outside-click";
-import api from "@/config/api";
 
 export const CarouselContext = createContext({
   onCardClose: () => {},
@@ -213,7 +212,7 @@ export const Card = ({ card, index, layout = false }) => {
               </motion.p>
               <div className="py-10">
                 <Image
-                  src={api + card.imageUrl}
+                  src={card.imageUrl}
                   height="500"
                   width="500"
                   className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
@@ -246,7 +245,7 @@ export const Card = ({ card, index, layout = false }) => {
           </motion.p>
         </div>
         <BlurImage
-          src={api + card.imageUrl}
+          src={card.imageUrl}
           alt={card.title}
           fill
           className="object-cover absolute z-10 inset-0"

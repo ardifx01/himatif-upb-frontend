@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import fetchDataDepartement from "@/config/departementApi/fetchData";
 import fetchDataGalery from "@/config/galeryApi/fetchData";
-import api from "@/config/api";
 
 export default function Department() {
   const [department, setDepartment] = useState(null);

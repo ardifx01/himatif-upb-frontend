@@ -1,6 +1,5 @@
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { IconTableColumn } from "@tabler/icons-react";
-import api from "@/config/api";
 import { useEffect, useState } from "react";
 import fetchData from "./fetchDataNews";
 import Image from "next/image";
@@ -64,6 +63,7 @@ const Skeleton = ({ imagesrc }) => (
     <Image
       className="w-full h-auto shadow-2xl hover:shadow-sm transition-all ease-in-out"
       src={imagesrc}
+      priority={false}
       width={100}
       height={100}
       alt="logo"
