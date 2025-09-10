@@ -42,7 +42,7 @@ export default function Department() {
           ? galery.map((gal) => ({
               title: gal.title,
               link: `/galery/${gal.id}`,
-              thumbnail: api + gal.imageUrl,
+              thumbnail: gal.imageUrl,
             }))
           : []
       }

@@ -1,4 +1,4 @@
-import api from "../api";
+import { bannerData } from "../../data/dummyData";
 
 export async function getStaticProps() {
   try {
@@ -22,19 +22,12 @@ export async function getStaticProps() {
 
 const fetchDatabanner = async () => {
   try {
-    const response = await fetch(`${api}/banner`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (!response.ok) {
-      throw new Error(`Network Error: ${response.statusText}`);
-    }
-    const data = await response.json();
-    return data;
+    // Menggunakan dummy data lokal
+    console.log("Using dummy banner data");
+    return bannerData;
   } catch (error) {
     console.error(`Error fetching banner data: ${error.message}`);
+    return [];
   }
 };
 

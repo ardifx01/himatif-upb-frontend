@@ -1,20 +1,18 @@
-import api from "@/config/api";
+import { galleryData } from "../../data/dummyData";
 
 const fetchDataGalery = async (departement) => {
   try {
-    const response = await fetch(`${api}/galery/${departement}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (!response.ok) {
-      throw new Error(`Network Error: ${response.statusText}`);
+    // Menggunakan dummy data lokal
+    console.log(`Using dummy gallery data for: ${departement}`);
+    const data = galleryData[departement];
+    if (!data) {
+      console.warn(`No dummy data found for gallery: ${departement}`);
+      return [];
     }
-    const data = await response.json();
     return data;
   } catch (error) {
     console.error(`Error fetching data: ${error.message}`);
+    return [];
   }
 };
 

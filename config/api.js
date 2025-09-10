@@ -1,3 +1,4 @@
-const api = "http://localhost:5000";
+// API base URL - tidak digunakan lagi karena menggunakan dummy data lokal
+const api = "";
 
 export default api;

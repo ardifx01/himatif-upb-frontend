@@ -55,7 +55,7 @@ export default function App() {
           <SwiperSlide key={banner.id}>
             <Image
               priority={banner.priority}
-              src={`${api}${banner.imageUrl}`}
+              src={banner.imageUrl}
               alt={banner.title}
               width={1920}
               height={1080}

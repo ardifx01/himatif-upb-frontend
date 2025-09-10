@@ -1,46 +1,95 @@
-// pages/user/[id].js
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/image";
+import { staffData } from "../../data/dummyData";
 
-const User = () => {
+const StaffDetail = () => {
   const router = useRouter();
   const { id } = router.query;
 
-  // Contoh beberapa data untuk 5 user yang berbeda
-  const userData = [
-    { id: 1, name: "John Doe", email: "john.doe@example.com", age: 30 },
-    { id: 2, name: "Jane Doe", email: "jane.doe@example.com", age: 25 },
-    { id: 3, name: "Alex Smith", email: "alex.smith@example.com", age: 28 },
-    {
-      id: 4,
-      name: "Emily Johnson",
-      email: "emily.johnson@example.com",
-      age: 32,
-    },
-    {
-      id: 5,
-      name: "Michael Brown",
-      email: "michael.brown@example.com",
-      age: 35,
-    },
-  ];
+  // Menemukan data staff berdasarkan ID
+  const foundStaff = staffData.find((staff) => staff.id === parseInt(id));
 
-  // Menemukan data user berdasarkan ID
-  const foundUser = userData.find((user) => user.id === parseInt(id));
-
-  if (!foundUser) {
-    return <div>User tidak ditemukan</div>;
+  if (!foundStaff) {
+    return (
+      <div className="container mx-auto px-4 py-8 text-center">
+        <h1 className="text-2xl font-bold mb-4">Staff tidak ditemukan</h1>
+        <Link href="/staff" className="text-blue-500 hover:underline">
+          Kembali ke Daftar Staff
+        </Link>
+      </div>
+    );
   }
 
   return (
-    <div>
-      <h1>User ID: {id}</h1>
-      <p>Nama: {foundUser.name}</p>
-      <p>Email: {foundUser.email}</p>
-      <p>Umur: {foundUser.age} tahun</p>
-      <Link href="/">Kembali ke Beranda</Link>
+    <div className="container mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto">
+        <Link
+          href="/staff"
+          className="text-blue-500 hover:underline mb-4 inline-block"
+        >
+          ← Kembali ke Daftar Staff
+        </Link>
+
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="md:flex">
+            <div className="md:w-1/3">
+              <div className="relative h-64 md:h-full">
+                <Image
+                  src={foundStaff.imageUrl}
+                  alt={foundStaff.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div className="md:w-2/3 p-6">
+              <h1 className="text-3xl font-bold mb-2">{foundStaff.name}</h1>
+              <p className="text-xl text-blue-600 font-semibold mb-2">
+                {foundStaff.position}
+              </p>
+              <p className="text-lg text-gray-600 mb-4">
+                {foundStaff.department}
+              </p>
+
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold mb-2">Biografi</h3>
+                <p className="text-gray-700">{foundStaff.bio}</p>
+              </div>
+
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold mb-2">Kontak</h3>
+                <div className="space-y-2">
+                  <p>
+                    <span className="font-medium">Email:</span>{" "}
+                    {foundStaff.email}
+                  </p>
+                  <p>
+                    <span className="font-medium">Phone:</span>{" "}
+                    {foundStaff.phone}
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Media Sosial</h3>
+                <div className="space-y-2">
+                  <p>
+                    <span className="font-medium">Instagram:</span>{" "}
+                    {foundStaff.socialMedia.instagram}
+                  </p>
+                  <p>
+                    <span className="font-medium">LinkedIn:</span>{" "}
+                    {foundStaff.socialMedia.linkedin}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default User;
+export default StaffDetail;

@@ -1,20 +1,13 @@
-import api from "@/config/api";
+import { profileData } from "../../data/dummyData";
 
 const fetchDataProfile = async () => {
   try {
-    const response = await fetch(`${api}/profile/profile`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (!response.ok) {
-      throw new Error("Network Error: " + response.message);
-    }
-    const data = await response.json();
-    return data;
+    // Menggunakan dummy data lokal
+    console.log("Using dummy profile data");
+    return profileData;
   } catch (err) {
     console.error("Error: " + err.message);
+    return null;
   }
 };
 

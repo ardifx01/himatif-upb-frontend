@@ -1,20 +1,13 @@
-import api from "@/config/api";
+import { historyData } from "../../data/dummyData";
 
 const fetchDataHistory = async () => {
   try {
-    const response = await fetch(`${api}/history`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (!response.ok) {
-      throw new Error("Network Error: " + response.message);
-    }
-    const data = await response.json();
-    return data;
+    // Menggunakan dummy data lokal
+    console.log("Using dummy history data");
+    return historyData;
   } catch (err) {
     console.error("Error: " + err.message);
+    return [];
   }
 };
 

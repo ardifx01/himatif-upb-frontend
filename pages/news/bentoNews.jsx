@@ -63,7 +63,7 @@ const Skeleton = ({ imagesrc }) => (
   <div className="flex flex-1 w-full h-full min-h-[6rem]  rounded-xl bg-gradient-to-br justify-center from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100">
     <Image
       className="w-full h-auto shadow-2xl hover:shadow-sm transition-all ease-in-out"
-      src={`${api}${imagesrc}`}
+      src={imagesrc}
       width={100}
       height={100}
       alt="logo"

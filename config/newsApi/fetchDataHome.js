@@ -1,18 +1,10 @@
-import api from "@/config/api";
+import { newsData } from "../../data/dummyData";
 
 const fetchData = async () => {
   try {
-    const response = await fetch(`${api}/news`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const data = await response.json();
-    return data;
+    // Menggunakan dummy data lokal
+    console.log("Using dummy news data");
+    return newsData;
   } catch (error) {
     console.error("Error fetching data:", error);
     // Tidak menghentikan proses jika gagal fetch
